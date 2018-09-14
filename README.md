@@ -109,6 +109,9 @@ See `examples/example_notebook.ipynb`:
 
 # Links
 
+* [AI Fairness Toolkit (AIF360)](https://github.com/IBM/AIF360)
+* [Contact AIF360 team on Slack](https://aif360.slack.com/)
+
 # Learn more
 
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
