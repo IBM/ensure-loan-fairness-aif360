@@ -21,7 +21,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 1. User interacts with Watson Studio to create a Jupyter notebook
 1. Notebook imports the AIF360 toolkit.
 1. Data is loaded into the notebook.
-1. User runs the notebook, which uses Samya tookit to assess fairness of Machine Learning model.
+1. User runs the notebook, which uses AIF360 tookit to assess fairness of Machine Learning model.
 
 ## Included components
 
@@ -109,7 +109,7 @@ See `examples/example_notebook.ipynb`:
 
 # Links
 
-* [AI Fairness Toolkit (AIF360)](https://github.com/IBM/AIF360)
+* [AI Fairness 360 Toolkit (AIF360)](https://github.com/IBM/AIF360)
 * [Contact AIF360 team on Slack](https://aif360.slack.com/)
 
 # Learn more
