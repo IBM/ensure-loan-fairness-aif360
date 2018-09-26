@@ -110,6 +110,7 @@ See `examples/example_notebook.ipynb`:
 # Links
 
 * [AI Fairness 360 Toolkit (AIF360)](https://github.com/IBM/AIF360)
+* [Live Demo of AI Fairness 360](http://aif360.mybluemix.net/data#)
 * [Contact AIF360 team on Slack](https://aif360.slack.com/)
 * [IBM launches tools to detect AI fairness, bias and open sources some code](https://www.zdnet.com/article/ibm-launches-tools-to-detect-ai-fairness-bias-and-open-sources-some-code/)
 
