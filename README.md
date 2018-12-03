@@ -44,7 +44,7 @@ Either run locally:
 
 or in Watson Studio:
 
-3. [Sign up for the Watson Studio](#3-sign-up-for-watson-studio)
+3. [Sign up for the Watson Studio and Create a Project](#3-sign-up-for-watson-studio-and-create-a-project)
 4. [Create the notebook](#4-create-the-notebook)
 
 then:
@@ -76,24 +76,31 @@ The code included in this Code Pattern runs in a Jupyter Notebook.
 
 ## Run in Watson Studio
 
-### 3. Sign up for Watson Studio
+### 3. Sign up for Watson Studio and Create a Project
 
-Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com). By creating a project in Watson Studio a free tier `Object Storage` service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
+* Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com).
+* Click the `Create a Project` tile and choose the `Data Science` tile by clicking `Create Project`. This is the best choice for a Jupyter notebook based project:
+
+![](https://github.com/IBM/pattern-utils/tree/master/watson-studio/CreateDataScienceProject.png)
+
+> Note: By creating a project in Watson Studio a free tier `Object Storage` service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
 
 > Note: When creating your Object Storage service, select the `Free` storage type in order to avoid having to pay an upgrade fee.
 
 ### 4. Create the notebook
 
-* In [Watson Studio](https://dataplatform.ibm.com), click on `Create notebook` to create a notebook.
-* Create a project if necessary, provisioning an object storage service if required.
-* In the `Assets` tab, select the `Create notebook` option.
+* In [Watson Studio](https://dataplatform.ibm.com), click on `+ Add to project` and then click the `Notebook` tile.
+
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/StudioAddToProjectNotebook.png)
+
 * Select the `From URL` tab.
 * Enter a name for the notebook.
 * Optionally, enter a description for the notebook.
 * Enter this Notebook URL: `https://raw.githubusercontent.com/IBM/ensure-loan-fairness-aif360/master/notebooks/credit_scoring.ipynb`
+* For runtime choose `Default Python 3.5 Free (1 vCPU and 4 GB RAM)`.
 * Click the `Create` button.
 
-![](doc/source/images/create_notebook.png)
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/notebook_with_url_py35.png)
 
 ### 5. Run the Notebook
 
