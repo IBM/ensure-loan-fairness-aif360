@@ -1,4 +1,4 @@
-[![Build Status](https://travis.ibm.com/samya/samya-bias-toolbox.svg?token=SxyZi76xHxfUp3FxEWab&branch=master)](https://travis.ibm.com/samya/samya-bias-toolbox)
+[![Build Status](https://travis.ibm.com/api/samya/samya-bias-toolbox.svg?token=SxyZi76xHxfUp3FxEWab&branch=master)](https://travis.ibm.com/samya/samya-bias-toolbox)
 
 # Ensure Loan Fairness
 
@@ -25,7 +25,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Included components
 
-* [Jupyter Notebook](http://jupyter.org/): An open source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
+* [Jupyter Notebook](https://jupyter.org/): An open source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
 * [Tensorflow](https://www.tensorflow.org/): An open source software library for numerical computation using data flow graphs.
 * [Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 
@@ -78,7 +78,7 @@ The code included in this Code Pattern runs in a Jupyter Notebook.
 
 ### 3. Sign up for Watson Studio and Create a Project
 
-* Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com).
+* Sign up for IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/).
 * Click the `Create a Project` tile and choose the `Data Science` tile by clicking `Create Project`. This is the best choice for a Jupyter notebook based project:
 
 ![](https://github.com/IBM/pattern-utils/tree/master/watson-studio/CreateDataScienceProject.png)
@@ -89,7 +89,7 @@ The code included in this Code Pattern runs in a Jupyter Notebook.
 
 ### 4. Create the notebook
 
-* In [Watson Studio](https://dataplatform.ibm.com), click on `+ Add to project` and then click the `Notebook` tile.
+* In [Watson Studio](https://dataplatform.cloud.ibm.com/), click on `+ Add to project` and then click the `Notebook` tile.
 
 ![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/StudioAddToProjectNotebook.png)
 
@@ -117,19 +117,19 @@ See `examples/example_notebook.ipynb`:
 # Links
 
 * [AI Fairness 360 Toolkit (AIF360)](https://github.com/IBM/AIF360)
-* [Live Demo of AI Fairness 360](http://aif360.mybluemix.net/data#)
+* [Live Demo of AI Fairness 360](http://aif360.mybluemix.net/data)
 * [Contact AIF360 team on Slack](https://aif360.slack.com/)
 * [IBM launches tools to detect AI fairness, bias and open sources some code](https://www.zdnet.com/article/ibm-launches-tools-to-detect-ai-fairness-bias-and-open-sources-some-code/)
 
 # Learn more
 
-* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
-* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/code/technologies/data-science/)
+* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
+* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/)
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
-* **Data Science Experience**: Master the art of data science with IBM's [Data Science Experience](https://datascience.ibm.com/)
+* **Data Science Experience**: Master the art of data science with IBM's [Data Science Experience](https://www.ibm.com/cloud/watson-studio)
 
 # License
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
