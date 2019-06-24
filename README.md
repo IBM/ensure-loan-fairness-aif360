@@ -1,6 +1,4 @@
-[![Build Status](https://travis.ibm.com/api/samya/samya-bias-toolbox.svg?token=SxyZi76xHxfUp3FxEWab&branch=master)](https://travis.ibm.com/samya/samya-bias-toolbox)
-
-# Ensure Loan Fairness
+# Ensure Loan Fairness with AI Fairness 360
 
 A machine learning model makes predictions of an outcome for a particular instance. (Given an instance of a loan application, predict if the applicant will repay the loan.) The model makes these predictions based on a training dataset, where many other instances (other loan applications) and actual outcomes (whether they repaid) are provided. Thus, a machine learning algorithm will attempt to find patterns, or generalizations, in the training dataset to use when a prediction for a new instance is needed. (For example, one pattern it might discover is "if a person has salary > USD 40K and has outstanding debt < USD 5, they will repay the loan".) In many domains this technique, called supervised machine learning, has worked very well.
 
@@ -14,9 +12,9 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Mitigate bias by transforming the original dataset
 * Compute fairness metric on transformed training dataset
 
-![](doc/source/images/architecture.png)
-
 ## Flow
+
+![architecture](doc/source/images/architecture.png)
 
 1. User interacts with Watson Studio to create a Jupyter notebook
 1. Notebook imports the AIF360 toolkit.
@@ -28,108 +26,112 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Jupyter Notebook](https://jupyter.org/): An open source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
 * [Tensorflow](https://www.tensorflow.org/): An open source software library for numerical computation using data flow graphs.
 * [Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
-
-## Featured technologies
-
-* [Artificial Intelligence](https://medium.com/ibm-watson): Artificial intelligence can be applied to disparate solution spaces to deliver disruptive technologies.
-* [Data Science](https://medium.com/ibm-watson): Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
 * [Python](https://www.python.org/): Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 
-# Steps
+## Steps
 
-Either run locally:
+Either [run locally](#run-locally):
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Run Jupyter Notebooks](#2-run-jupyter-notebooks)
+1. [Load the notebook](#2-load-the-notebook)
 
-or in Watson Studio:
+or [use Watson Studio](#use-watson-studio):
 
-3. [Sign up for the Watson Studio and Create a Project](#3-sign-up-for-watson-studio-and-create-a-project)
-4. [Create the notebook](#4-create-the-notebook)
+1. [Create a new project](#1-create-a-new-project)
+1. [Create the notebook](#2-create-the-notebook)
 
 then:
 
-5. [Run the Notebook](#5-run-the-notebook)
+3. [Run the notebook](#3-run-the-notebook)
 
 ## Run locally
 
 ### 1. Clone the repo
 
-Clone the https://github.com/IBM/ensure-loan-fairness-aif360 locally. In a terminal, run:
+Clone the repo locally. In a terminal, run:
 
+```bash
+git clone https://github.com/IBM/ensure-loan-fairness-aif360
 ```
-$ git clone https://github.com/IBM/ensure-loan-fairness-aif360
-```
 
-### 2. Run Jupyter Notebooks
+### 2. Load the notebook
 
-The code included in this Code Pattern runs in a Jupyter Notebook.
+* Start your Jupyter Notebook process. Running in the `ensure-loan-fairness-aif360` cloned repo directory will help you find the notebook and the output as described below. The `jupyter notebook` process will open your browser.
 
-* Start your Jupyter Notebooks. Starting in your `ensure-load-fairness-aif360` cloned repo directory will help you find the notebook and the output as described below. Jupyter Notebooks will open in your browser.
-
-   ```
-   cd ensure-load-fairness-aif360
+   ```bash
+   cd ensure-loan-fairness-aif360
    jupyter notebook
    ```
 
-* Navigate to the `notebooks` directory and open the notebook file named `credit_scoring.ipynb` by clicking on it.
+* Navigate to the `notebooks` directory and open the notebook file named `credit_scoring.ipynb`.
 
-## Run in Watson Studio
+## Use Watson Studio
 
-### 3. Sign up for Watson Studio and Create a Project
+### 1. Create a new project
 
-* Sign up for IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/).
-* Click the `Create a Project` tile and choose the `Data Science` tile by clicking `Create Project`. This is the best choice for a Jupyter notebook based project:
+* Log into IBM's [Watson Studio](https://dataplatform.cloud.ibm.com). Once in, you'll land on the dashboard.
 
-![](https://github.com/IBM/pattern-utils/tree/master/watson-studio/CreateDataScienceProject.png)
+* Create a new project by clicking `+ New project` and choosing `Data Science`:
 
-> Note: By creating a project in Watson Studio a free tier `Object Storage` service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
+  ![studio project](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-studio/new-project-data-science.png)
 
-> Note: When creating your Object Storage service, select the `Free` storage type in order to avoid having to pay an upgrade fee.
+* Enter a name for the project name and click `Create`.
 
-### 4. Create the notebook
+* **NOTE**: By creating a project in Watson Studio a free tier `Object Storage` service and `Watson Machine Learning` service will be created in your IBM Cloud account. Select the `Free` storage type to avoid fees.
 
-* In [Watson Studio](https://dataplatform.cloud.ibm.com/), click on `+ Add to project` and then click the `Notebook` tile.
+  ![studio-new-project](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-studio/new-project-data-science-name.png)
 
-![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/StudioAddToProjectNotebook.png)
+* Upon a successful project creation, you are taken to a dashboard view of your project. Take note of the `Assets` and `Settings` tabs, we'll be using them to associate our project with any external assets (datasets and notebooks) and any IBM cloud services.
 
-* Select the `From URL` tab.
-* Enter a name for the notebook.
-* Optionally, enter a description for the notebook.
-* Enter this Notebook URL: `https://raw.githubusercontent.com/IBM/ensure-loan-fairness-aif360/master/notebooks/credit_scoring.ipynb`
-* For runtime choose `Default Python 3.5 Free (1 vCPU and 4 GB RAM)`.
+  ![studio-project-dashboard](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-studio/overview-empty.png)
+
+### 2. Create the notebook
+
+* From the new project `Overview` panel, click `+ Add to project` on the top right and choose the `Notebook` asset type.
+
+  ![studio-project-dashboard](https://raw.githubusercontent.com/IBM/pattern-utils/master/watson-studio/add-assets-notebook.png)
+
+* Fill in the following information:
+
+  * Select the `From URL` tab. [1]
+  * Enter a `Name` for the notebook and optionally a description. [2]
+  * Under `Notebook URL` provide the following url: [https://raw.githubusercontent.com/IBM/ensure-loan-fairness-aif360/master/notebooks/credit_scoring.ipynb](https://raw.githubusercontent.com/IBM/ensure-loan-fairness-aif360/master/notebooks/credit_scoring.ipynb) [3]
+  * For `Runtime` select the `Python 3.5` option. [4]
+
+  ![add notebook](https://github.com/IBM/pattern-utils/raw/master/watson-studio/notebook-create-url-py35.png)
+
 * Click the `Create` button.
 
-![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/notebook_with_url_py35.png)
+* **TIP:** Once successfully imported, the notebook should appear in the `Notebooks` section of the `Assets` tab.
 
-### 5. Run the Notebook
+### 3. Run the notebook
 
 * Use the menu pull-down `Cell > Run All` to run the notebook, or run the cells one at a time top-down using the play button.
 
 * As the cells run, watch the output for results or errors. A running cell will have a label like `In [*]`. A completed cell will have a run sequence number instead of the asterisk.
 
-# Sample output
+## Sample output
 
-See `examples/example_notebook.ipynb`:
+See [`examples/example_notebook.ipynb`](examples/example_notebook.ipynb):
 
-![](doc/source/images/example_output.png)
+![example output](doc/source/images/example_output.png)
 
-# Links
+## Links
 
 * [AI Fairness 360 Toolkit (AIF360)](https://github.com/IBM/AIF360)
 * [Live Demo of AI Fairness 360](https://aif360.mybluemix.net/data)
 * [Contact AIF360 team on Slack](https://aif360.slack.com/)
 * [IBM launches tools to detect AI fairness, bias and open sources some code](https://www.zdnet.com/article/ibm-launches-tools-to-detect-ai-fairness-bias-and-open-sources-some-code/)
 
-# Learn more
+## Learn more
 
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
 * **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/)
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
-* **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
 * **Watson Studio**: Master the art of data science with IBM's [Watson Studio](https://www.ibm.com/cloud/watson-studio)
 
-# License
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+## License
+
+This code pattern is licensed under the Apache Software License, Version 2. Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
